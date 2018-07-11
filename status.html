@@ -43,12 +43,18 @@
                 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                   <thead>
                     <tr>
-                      <th ng-repeat="(k,v) in m.d[0]">{{k}}</th>
+                      <th>date</th>
+                      <th>am</th>
+                      <th>pm</th>
+                      <th ng-repeat="name in m.d.names">{{name}}</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="r in m.d">
-                      <td ng-repeat="(k,v) in r">{{v}}</td>
+                    <tr ng-repeat="row in m.d.values">
+                      <td>{{row[0]}}</td>
+                      <td>{{row[1]}} {{row[2]}}</td>
+                      <td>{{row[3]}} {{row[4]}}</td>
+                      <td ng-repeat="v in row" ng-if="$index>4">{{v}}</td>
                     </tr>
                   </tbody>
                 </table>
