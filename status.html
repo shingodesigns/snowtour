@@ -28,38 +28,38 @@
             </div>
         </header>
         <main class="mdl-layout__content">
-			<section class="styleguide-container mdl-grid">
-				<div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<select class="mdl-textfield__input" id="location" ng-model="m.s" ng-change="m.c()">
-						<option value="turoa">Turoa</option>
-						<option value="whakapapa">Whakapapa</option>
-						<option value="cardrona">Cardrona</option>
-						<option value="treble_cone">Treble Cone</option>
-					</select>
-					<label class="mdl-textfield__label" for="location">Location</label>
-				</div>
-				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-				  <thead>
-					<tr>
-					  <th ng-repeat="(k,v) in m.d[0]">{{k}}</th>
-					</tr>
-				  </thead>
-				  <tbody>
-					<tr ng-repeat="r in m.d">
-					  <td ng-repeat="(k,v) in r">{{v}}</td>
-					</tr>
-				  </tbody>
-				</table>
-			</section>
+            <section class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <select class="mdl-textfield__input" id="location" ng-model="m.s" ng-change="m.c()">
+                        <option value="turoa">Turoa</option>
+                        <option value="whakapapa">Whakapapa</option>
+                        <option value="cardrona">Cardrona</option>
+                        <option value="treble_cone">Treble Cone</option>
+                    </select>
+                    <label class="mdl-textfield__label" for="location">Location</label>
+                </div>
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                  <thead>
+                    <tr>
+                      <th ng-repeat="(k,v) in m.d[0]">{{k}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="r in m.d">
+                      <td ng-repeat="(k,v) in r">{{v}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </section>
         </main>
-		<footer class="mdl-mega-footer">
-			<div class="mdl-mega-footer--bottom-section">
-				<div class="mdl-logo">© 2018 Shingo Snow Tour. All rights reserved.</div>
-			</div>
-		</footer>
+        <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer--bottom-section">
+                <div class="mdl-logo">© 2018 Shingo Snow Tour. All rights reserved.</div>
+            </div>
+        </footer>
     </div>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <script src="scripts/status.js"></script>
 </body>
 </html>
