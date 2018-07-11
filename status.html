@@ -52,7 +52,7 @@
                   <tbody>
                     <tr ng-repeat="row in m.d.values">
                       <td>{{row[0]}}</td>
-                      <td class="mdl-data-table__cell--non-numeric"><span ng-style="{color:m.w(row[1]}}">&#x25CF;</span> {{row[1]}} {{row[2]}}</td>
+                      <td class="mdl-data-table__cell--non-numeric"><span ng-style="{color:m.w(row[1])}">&#x25CF;</span> {{row[1]}} {{row[2]}}</td>
                       <td class="mdl-data-table__cell--non-numeric"><span ng-style="{color:m.w(row[3])}">&#x25CF;</span> {{row[3]}} {{row[4]}}</td>
                       <td ng-repeat="v in row track by $index" ng-if="$index>4"><span ng-style="{color:m.l(v)}">&#x25CF;</span> {{v}}</td>
                     </tr>
