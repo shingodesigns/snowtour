@@ -54,7 +54,7 @@
                       <td>{{row[0]}}</td>
                       <td>{{row[1]}} {{row[2]}}</td>
                       <td>{{row[3]}} {{row[4]}}</td>
-                      <td ng-repeat="v in row" ng-if="$index>4">{{v}}</td>
+                      <td ng-repeat="v in row track by $index" ng-if="$index>4">{{v}}</td>
                     </tr>
                   </tbody>
                 </table>
