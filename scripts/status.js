@@ -1,1 +1,1 @@
-angular.module("a",[]).controller("c",["$http",function(a){var b=this;b.a=function(){a.get(b.select+".json").then(function(a){b.data=a.data})}}]);
+angular.module("a",[]).controller("c",["$http",function(a){var b=this;b.c=function(){a.get(b.s+".json").then(function(a){b.d=a.data})}}]);
