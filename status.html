@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status</title>
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Status">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Status">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+    <meta name="theme-color" content="#2F3BA2">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-pink.min.css">
+</head>
+<body class="mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" ng-app="a">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="c as vm">
+        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            </div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                <h3>Status</h3>
+            </div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+			<section class="styleguide-container mdl-grid">
+				<div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<select class="mdl-textfield__input" id="location" ng-model="vm.select" ng-change="vm.change()">
+						<option value="turoa">Turoa</option>
+						<option value="whakapapa">Whakapapa</option>
+						<option value="cardrona">Cardrona</option>
+						<option value="treble_cone">Treble Cone</option>
+					</select>
+					<label class="mdl-textfield__label" for="location">Location</label>
+				</div>
+				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+				  <thead>
+					<tr>
+					  <th ng-repeat="(key, value) in vm.data[0]">{{key}}</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr ng-repeat="row in vm.data">
+					  <td ng-repeat="(key, value) in row">{{value}}</td>
+					</tr>
+				  </tbody>
+				</table>
+			</section>
+        </main>
+		<footer class="mdl-mega-footer">
+			<div class="mdl-mega-footer--bottom-section">
+				<div class="mdl-logo">© 2018 Shingo Snow Tour. All rights reserved.</div>
+			</div>
+		</footer>
+    </div>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="scripts/status.js"></script>
+</body>
+</html>
