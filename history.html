@@ -19,13 +19,11 @@
 <body class="mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" ng-app="a">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="c as m">
         <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            </div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
             <div class="mdl-layout--large-screen-only mdl-layout__header-row">
                 <h3>History</h3>
             </div>
-            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            </div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
         </header>
         <main class="mdl-layout__content">
             <section class="mdl-grid">
@@ -38,27 +36,45 @@
                     </select>
                     <label class="mdl-textfield__label" for="location">Location</label>
                 </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <select class="mdl-textfield__input" id="year" ng-model="m.y" ng-change="m.c()">
+                        <option>2018</option>
+                    </select>
+                    <label class="mdl-textfield__label" for="year">Year</label>
+                </div>
             </section>
             <section class="mdl-grid" style="overflow:auto">
                 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                   <thead>
                     <tr>
                       <th class="mdl-data-table__cell--non-numeric">date</th>
-                      <th class="mdl-data-table__cell--non-numeric">am</th>
-                      <th class="mdl-data-table__cell--non-numeric">pm</th>
+                      <th class="mdl-data-table__cell--non-numeric">wind</th>
+                      <th class="mdl-data-table__cell--non-numeric">summary</th>
+                      <th class="mdl-data-table__cell--non-numeric">snow</th>
+                      <th class="mdl-data-table__cell--non-numeric">rain</th>
+                      <th class="mdl-data-table__cell--non-numeric">freezing</th>
                       <th class="mdl-data-table__cell--non-numeric" ng-repeat="name in m.d.names">{{name}}</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="row in m.d.values">
-                      <td class="mdl-data-table__cell--non-numeric">{{row[0]}}</td>
-                      <td class="mdl-data-table__cell--non-numeric"><span class="mdl-chip" ng-style="{'background-color':m.w(row[1])}">
-                        <span class="mdl-chip__text">&nbsp;</span>
-                      </span> {{row[1]}} {{row[2]}}</td>
-                      <td class="mdl-data-table__cell--non-numeric"><span class="mdl-chip" ng-style="{'background-color':m.w(row[3])}">
-                        <span class="mdl-chip__text">&nbsp;</span>
-                      </span> {{row[3]}} {{row[4]}}</td>
-                      <td class="mdl-data-table__cell--non-numeric" ng-repeat="v in row track by $index" ng-if="$index>4"><span class="mdl-chip" ng-style="{'background-color':m.l(v)}">
+                    <tr ng-repeat="r in m.d.values">
+                      <td class="mdl-data-table__cell--non-numeric">{{r[0]}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                        <span class="mdl-chip" ng-style="{'background-color':m.w(r[1])}">
+                          <span class="mdl-chip__text">&nbsp;</span>
+                        </span> {{r[1]}} {{r[4]}}<br/>
+                        <span class="mdl-chip" ng-style="{'background-color':m.w(r[2])}">
+                          <span class="mdl-chip__text">&nbsp;</span>
+                        </span> {{r[2]}} {{r[5]}}<br/>
+                        <span class="mdl-chip" ng-style="{'background-color':m.w(r[3])}">
+                          <span class="mdl-chip__text">&nbsp;</span>
+                        </span> {{r[3]}} {{r[6]}}
+                      </td>
+                      <td class="mdl-data-table__cell--non-numeric"><p>{{r[7]}}</p><p>{{r[8]}}</p><p>{{r[9]}}</p></td>
+                      <td class="mdl-data-table__cell--non-numeric"><p>{{m.z(r[10])}}</p><p>{{m.z(r[11])}}</p><p>{{m.z(r[12])}}</p></td>
+                      <td class="mdl-data-table__cell--non-numeric"><p>{{m.z(r[13])}}</p><p>{{m.z(r[14])}}</p><p>{{m.z(r[15])}}</p></td>
+                      <td class="mdl-data-table__cell--non-numeric"><p>{{r[16]}}</p><p>{{r[17]}}</p><p>{{r[18]}}</p></td>
+                      <td class="mdl-data-table__cell--non-numeric" ng-repeat="v in r track by $index" ng-if="$index>18"><span class="mdl-chip" ng-style="{'background-color':m.l(v)}">
                         <span class="mdl-chip__text">&nbsp;</span>
                       </span> {{v}}</td>
                     </tr>
@@ -73,7 +89,7 @@
         </footer>
     </div>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
     <script src="scripts/history.js"></script>
 </body>
 </html>
