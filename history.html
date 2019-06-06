@@ -46,8 +46,7 @@
             </section>
             <section class="mdl-grid" style="overflow:auto">
                 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-                  <thead>
-                    <tr>
+                    <tr ng-repeat-start="r in m.d.values" ng-if="$index%7==0">
                       <th class="mdl-data-table__cell--non-numeric">date</th>
                       <th class="mdl-data-table__cell--non-numeric">wind</th>
                       <th class="mdl-data-table__cell--non-numeric">summary</th>
@@ -56,9 +55,7 @@
                       <th class="mdl-data-table__cell--non-numeric">freezing</th>
                       <th class="mdl-data-table__cell--non-numeric" ng-repeat="name in m.d.names">{{name}}</th>
                     </tr>
-                  </thead>
-                  <tbody>
-                    <tr ng-repeat-start="r in m.d.values">
+                    <tr ng-repeat-end>
                       <td class="mdl-data-table__cell--non-numeric">{{r[0]}}</td>
                       <td class="mdl-data-table__cell--non-numeric">
                         <span class="mdl-chip" ng-style="{'background-color':m.w(r[1])}">
@@ -79,16 +76,6 @@
                         <span class="mdl-chip__text">&nbsp;</span>
                       </span> {{v}}</td>
                     </tr>
-                    <tr ng-repeat-end ng-if="$index%10==9">
-                      <th class="mdl-data-table__cell--non-numeric">date</th>
-                      <th class="mdl-data-table__cell--non-numeric">wind</th>
-                      <th class="mdl-data-table__cell--non-numeric">summary</th>
-                      <th class="mdl-data-table__cell--non-numeric">snow</th>
-                      <th class="mdl-data-table__cell--non-numeric">rain</th>
-                      <th class="mdl-data-table__cell--non-numeric">freezing</th>
-                      <th class="mdl-data-table__cell--non-numeric" ng-repeat="name in m.d.names">{{name}}</th>
-                    </tr>
-                  </tbody>
                 </table>
             </section>
         </main>
