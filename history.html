@@ -58,7 +58,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="r in m.d.values">
+                    <tr ng-repeat-start="r in m.d.values">
                       <td class="mdl-data-table__cell--non-numeric">{{r[0]}}</td>
                       <td class="mdl-data-table__cell--non-numeric">
                         <span class="mdl-chip" ng-style="{'background-color':m.w(r[1])}">
@@ -78,6 +78,15 @@
                       <td class="mdl-data-table__cell--non-numeric" ng-repeat="v in r track by $index" ng-if="$index>18"><span class="mdl-chip" ng-style="{'background-color':m.l(v)}">
                         <span class="mdl-chip__text">&nbsp;</span>
                       </span> {{v}}</td>
+                    </tr>
+                    <tr ng-repeat-end ng-if="!$index%10">
+                      <th class="mdl-data-table__cell--non-numeric">date</th>
+                      <th class="mdl-data-table__cell--non-numeric">wind</th>
+                      <th class="mdl-data-table__cell--non-numeric">summary</th>
+                      <th class="mdl-data-table__cell--non-numeric">snow</th>
+                      <th class="mdl-data-table__cell--non-numeric">rain</th>
+                      <th class="mdl-data-table__cell--non-numeric">freezing</th>
+                      <th class="mdl-data-table__cell--non-numeric" ng-repeat="name in m.d.names">{{name}}</th>
                     </tr>
                   </tbody>
                 </table>
