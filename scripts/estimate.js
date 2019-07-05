@@ -1,0 +1,1 @@
+angular.module("a",[]).controller("c",["$http",function(c){var b=this;b.c=function(){c.get("data/"+b.s+"_est.json").then(function(a){b.d=a.data})};b.l=function(a){return"OPEN"==a?"green":"CLOSED"==a?"red":a?"orange":"white"}}]);
