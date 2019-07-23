@@ -39,7 +39,7 @@
                 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                     <tr ng-repeat-start="r in m.d.values" ng-if="$index%7==0">
                       <th class="mdl-data-table__cell--non-numeric">date</th>
-                      <th class="mdl-data-table__cell--non-numeric" ng-repeat="name in m.d.names">{{name}}</th>
+                      <th class="mdl-data-table__cell--non-numeric" ng-repeat="name in m.d.names">{{name | date:'EEE, dd MMM'}}</th>
                     </tr>
                     <tr ng-repeat-end>
                       <td class="mdl-data-table__cell--non-numeric">{{r[0]}}</td>
